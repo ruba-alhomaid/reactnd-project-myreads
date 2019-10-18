@@ -20,7 +20,6 @@ class SearchPage extends React.Component {
         else { 
             BooksAPI.search(query) 
             .then(books => {
-                console.log(books)
                 books.map(book => {
                     book.shelf = 'none'
                     this.props.booksOnShelfs.map(b => { 
@@ -35,14 +34,7 @@ class SearchPage extends React.Component {
                 console.log(err)
                 this.setState({ books: [] })
             })}
-        }
-    //     .then((newBooks) => {
-    //         if (newBooks)
-    //         this.setState(() => ({ 
-    //             books : newBooks
-    //           }))
-    //     })
-    // } 
+        } 
 
     render() { 
         const { query } = this.state

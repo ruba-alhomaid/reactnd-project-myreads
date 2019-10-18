@@ -2,12 +2,7 @@ import React from 'react'
 
 class Book extends React.Component {
 
-    state = {
-        //shelf : this.props.book.shelf ? this.props.book.shelf : 'none'
-    }
-
     handleChange = (event) => {
-        //this.setState((event) => ({shelf : event.target.value}))
         this.props.shelfUpdate(this.props.book, event.target.value)
     }
 
