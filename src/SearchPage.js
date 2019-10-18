@@ -20,7 +20,6 @@ class SearchPage extends React.Component {
         else { 
             BooksAPI.search(query) 
             .then(books => {
-                books.map(book => {
                     book.shelf = 'none'
                     this.props.booksOnShelfs.map(b => { 
                         book.id === b.id && ( book.shelf = b.shelf )
