@@ -4,10 +4,10 @@ This project is for Udacity's React Fundamentals course. It's a bookshelf app th
 
 ## Getting Started
 
-1- Download or Clone the Repository.
-2- Run npm install to install the project dependencies.
-3- Run the app using npm start.
-4- App can be seen at: localhost:3000.
+* Download or Clone the Repository.
+* Run npm install to install the project dependencies. 
+* Run the app using npm start.
+* App can be seen at: localhost:3000.
 
 ## What You're Getting
 ```bash

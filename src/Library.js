@@ -30,8 +30,10 @@ class Library extends React.Component {
                     shelfUpdate= {this.props.shelfUpdate}/>
               </div>
             </div>
+          </div >
+          <div className= "open-search">
+            <Link to='/SearchPage'>add book</Link>
           </div>
-          <Link className="open-search" to='/SearchPage'>Add</Link>
         </div>
     )}
 }
