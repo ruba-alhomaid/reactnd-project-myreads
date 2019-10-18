@@ -8,18 +8,41 @@ class SearchPage extends React.Component {
         query : '',
         books : []
     }
+
     updateQuery = (query) => {
         this.setState(() => ({
             query : query.trim()
         }))
-        BooksAPI.search(query) 
-        .then((newBooks) => {
-            if (newBooks)
-            this.setState(() => ({ 
-                books : newBooks
-              }))
-        })
-    } 
+        if ( query === '' || (!query) ) {
+            this.setState({
+              books: []
+            })}
+        else { 
+            BooksAPI.search(query) 
+            .then(books => {
+                console.log(books)
+                books.map(book => {
+                    book.shelf = 'none'
+                    this.props.booksOnShelfs.map(b => { 
+                        book.id === b.id && ( book.shelf = b.shelf )
+                        return b
+                    })
+                    return books
+                })
+                this.setState({ books: books })
+            })
+            .catch(err => {
+                console.log(err)
+                this.setState({ books: [] })
+            })}
+        }
+    //     .then((newBooks) => {
+    //         if (newBooks)
+    //         this.setState(() => ({ 
+    //             books : newBooks
+    //           }))
+    //     })
+    // } 
 
     render() { 
         const { query } = this.state

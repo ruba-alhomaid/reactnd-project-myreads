@@ -7,7 +7,7 @@ class WantToRead extends React.Component {
       <div className="bookshelf-books">
         <ol className="books-grid">
           { this.props.books.map((book) => {
-            return(<li>
+            return(<li key= {book.id}>
               <Book book= {book} shelfUpdate= {this.props.shelfUpdate}/>
             </li>
             )})}

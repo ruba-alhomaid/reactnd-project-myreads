@@ -16,17 +16,17 @@ class Library extends React.Component {
             <div>
               <div className="bookshelf">
                 <h2 className="bookshelf-title">Currently Reading</h2>
-                <CurrentlyRead books = {this.props.books.filter(b => b.shelf === 'CurrentlyRead')}
+                <CurrentlyRead books = {this.props.books.filter(b => b.shelf === 'currentlyReading')}
                     shelfUpdate= {this.props.shelfUpdate}/>
               </div>
               <div className="bookshelf">
                 <h2 className="bookshelf-title">Want to Read</h2>
-                <WantToRead books = {this.props.books.filter(b => b.shelf === 'WantToRead')}
+                <WantToRead books = {this.props.books.filter(b => b.shelf === 'wantToRead')}
                     shelfUpdate= {this.props.shelfUpdate}/>
               </div>
               <div className="bookshelf">
                 <h2 className="bookshelf-title">Read</h2>
-                <Read books = {this.props.books.filter(b => b.shelf === 'Read')}
+                <Read books = {this.props.books.filter(b => b.shelf === 'read')}
                     shelfUpdate= {this.props.shelfUpdate}/>
               </div>
             </div>
