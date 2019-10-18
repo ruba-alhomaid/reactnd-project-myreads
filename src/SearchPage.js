@@ -4,6 +4,7 @@ import * as BooksAPI from './BooksAPI'
 import Book from './Book'
 
 class SearchPage extends React.Component {
+    
     state = {
         query : '',
         books : []
@@ -20,6 +21,8 @@ class SearchPage extends React.Component {
         else { 
             BooksAPI.search(query) 
             .then(books => {
+                console.log(books)
+                books.map(book => {
                     book.shelf = 'none'
                     this.props.booksOnShelfs.map(b => { 
                         book.id === b.id && ( book.shelf = b.shelf )
